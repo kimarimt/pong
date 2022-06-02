@@ -1,4 +1,5 @@
 import turtle
+import time
 from drawer import Drawer
 from paddle import Paddle
 from ball import Ball
@@ -30,6 +31,7 @@ if __name__ == '__main__':
     screen.listen()
 
     while is_running:
+        time.sleep(0.1)
         screen.update()
         ball.move()
         ball.bounce()

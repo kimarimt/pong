@@ -25,5 +25,6 @@ class Paddle(Turtle):
             self.goto(self.coords[0], y)
 
     def hit_ball(self, ball):
+        ball.velocity *= 0.5
         return self.distance(ball.position()) < 20
 

@@ -3,7 +3,7 @@ import random
 
 
 class Ball(Turtle):
-    speeds = [-5, 5]
+    speeds = [-10, 10]
 
     def __init__(self):
         super().__init__()
@@ -14,6 +14,7 @@ class Ball(Turtle):
         self.shape('circle')
         self.shapesize(0.5)
         self.speed(0)
+        self.velocity = 0.1
 
     def move(self):
         x = self.xcor() + self.x_move
@@ -29,14 +30,14 @@ class Ball(Turtle):
             return 'player_2', True
         elif self.xcor() > 400:
             return 'player_1', True
-        else:
-            return '', False
+        return '', False
 
     def reset(self):
         self.x_move = random.choice(self.speeds)
         self.y_move = random.choice(self.speeds)
         self.hideturtle()
         self.goto(0, 0)
+        self.velocity = 0.1
         self.showturtle()
         self.move()
 
