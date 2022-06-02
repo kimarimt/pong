@@ -23,3 +23,7 @@ class Paddle(Turtle):
         if self.ycor() > -210:
             y = self.ycor() - 10
             self.goto(self.coords[0], y)
+
+    def hit_ball(self, ball):
+        return self.distance(ball.position()) < 20
+

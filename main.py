@@ -33,3 +33,14 @@ if __name__ == '__main__':
         screen.update()
         ball.move()
         ball.bounce()
+        ball.enters_goal()
+        
+        if player_1.hit_ball(ball) or player_2.hit_ball(ball):
+            ball.x_move *= -1
+
+        player, scored = ball.enters_goal()
+        if scored:
+            screen.tracer(False)
+            drawer.update_score(player)
+            screen.tracer(True)
+            ball.reset()
